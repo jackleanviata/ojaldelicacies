@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ojal Groceries – Fresh From the Market</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== LOADING SCREEN ===== -->
+  <div id="loader" class="loader">
+    <div class="loader-inner">
+      <div class="loader-leaf">🥬</div>
+      <p>Loading freshness…</p>
+    </div>
+  </div>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-icon">🛒</span>
+        <span class="logo-text">Ojal <em>Groceries</em></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#offers">Offers</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#order">Order</a></li>
+        <li><a href="#payment">Payment</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="home" class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">📍 Embul Bul, Ngong, Kenya</span>
+      <h1 class="hero-title">Ojal <span class="hero-accent">Groceries</span></h1>
+      <p class="hero-slogan">Your neighbourhood's freshest delicacies — always nearby, always good.</p>
+      <div class="hero-cta">
+        <a href="#order" class="btn btn-primary">Order Now</a>
+        <a href="#products" class="btn btn-outline">See Products</a>
+      </div>
+      <div class="hero-badges">
+        <div class="badge"><span>🥚</span> Fresh Eggs</div>
+        <div class="badge"><span>🐟</span> Fresh Fish</div>
+        <div class="badge"><span>🥬</span> Groceries</div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll down</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="about section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-story reveal">
+          <span class="section-eyebrow">Our Story</span>
+          <h2 class="section-title">Rooted in the Community</h2>
+          <p>Ojal Groceries was born from a simple belief: every family in Embul Bul deserves access to fresh, affordable food without travelling far. We started as a small stall and have grown into a trusted neighbourhood institution — your go-to for boiled eggs at dawn, fresh fish in the evening, and everything in between.</p>
+          <p>We source directly from local suppliers to keep quality high and prices fair. When you shop here, you're also supporting Ngong's local food network.</p>
+        </div>
+        <div class="about-cards reveal">
+          <div class="about-card">
+            <span class="about-icon">🌿</span>
+            <h3>Our Mission</h3>
+            <p>To nourish every home in Embul Bul with fresh, fairly priced food and warm, personalised service every single day.</p>
+          </div>
+          <div class="about-card">
+            <span class="about-icon">🤝</span>
+            <h3>Why Choose Us</h3>
+            <ul class="about-list">
+              <li>✅ Fresh stock daily</li>
+              <li>✅ Honest, fair prices</li>
+              <li>✅ M-Pesa accepted</li>
+              <li>✅ Friendly neighbourhood service</li>
+              <li>✅ Wide variety of delicacies</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="stat reveal"><strong id="statProducts">6+</strong><span>Products</span></div>
+        <div class="stat reveal"><strong>Daily</strong><span>Fresh Stock</span></div>
+        <div class="stat reveal"><strong>100%</strong><span>M-Pesa Ready</span></div>
+        <div class="stat reveal"><strong>Embul Bul</strong><span>Based &amp; Trusted</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCTS ===== -->
+  <section id="products" class="products section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">What We Offer</span>
+        <h2 class="section-title">Our Products</h2>
+        <p class="section-sub">From street-food staples to essential grocery items — all in one place.</p>
+      </div>
+      <div class="products-controls reveal">
+        <input type="search" id="productSearch" class="search-input" placeholder="🔍 Search products…" />
+        <div class="filter-tabs" id="filterTabs">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="delicacy">Delicacies</button>
+          <button class="filter-btn" data-filter="grocery">Groceries</button>
+          <button class="filter-btn" data-filter="fish">Fish & Seafood</button>
+        </div>
+      </div>
+      <div class="products-grid" id="productsGrid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SPECIAL OFFERS ===== -->
+  <section id="offers" class="offers section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Limited Time</span>
+        <h2 class="section-title">Special Offers 🏷️</h2>
+      </div>
+      <div class="offers-grid" id="offersGrid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <section id="gallery" class="gallery section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Our Space</span>
+        <h2 class="section-title">Gallery</h2>
+      </div>
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose">&times;</button>
+      <button class="lightbox-prev" id="lightboxPrev">&#8249;</button>
+      <div class="lightbox-content">
+        <div class="lightbox-img-wrap" id="lightboxImgWrap"></div>
+        <p class="lightbox-caption" id="lightboxCaption"></p>
+      </div>
+      <button class="lightbox-next" id="lightboxNext">&#8250;</button>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS ===== -->
+  <section id="reviews" class="reviews section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">What Customers Say</span>
+        <h2 class="section-title">Customer Reviews</h2>
+      </div>
+      <div class="testimonials-slider">
+        <div class="testimonials-track" id="testimonialsTrack">
+          <!-- Populated by JS -->
+        </div>
+        <div class="slider-controls">
+          <button class="slider-btn" id="prevSlide">&#8249;</button>
+          <div class="slider-dots" id="sliderDots"></div>
+          <button class="slider-btn" id="nextSlide">&#8250;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ORDER ===== -->
+  <section id="order" class="order section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Easy Ordering</span>
+        <h2 class="section-title">Place Your Order</h2>
+        <p class="section-sub">Fill in your details and we'll confirm via WhatsApp.</p>
+      </div>
+      <div class="order-layout">
+        <div class="order-form-wrap reveal">
+          <form id="orderForm" class="order-form" novalidate>
+            <div class="form-group">
+              <label for="customerName">Your Name *</label>
+              <input type="text" id="customerName" placeholder="e.g. Jane Wanjiku" required />
+              <span class="field-error" id="nameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="customerPhone">Phone Number *</label>
+              <input type="tel" id="customerPhone" placeholder="07XXXXXXXX" required />
+              <span class="field-error" id="phoneError"></span>
+            </div>
+            <div class="form-group">
+              <label>Select Products *</label>
+              <div class="product-checkboxes" id="orderProductList">
+                <!-- Populated by JS -->
+              </div>
+              <span class="field-error" id="productError"></span>
+            </div>
+            <div class="form-group">
+              <label for="orderNotes">Special Instructions</label>
+              <textarea id="orderNotes" rows="3" placeholder="Any special requests…"></textarea>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary btn-full" id="whatsappOrderBtn">
+                💬 Send Order via WhatsApp
+              </button>
+              <a href="tel:0769675130" class="btn btn-outline btn-full">📞 Call to Order</a>
+            </div>
+          </form>
+        </div>
+        <div class="order-summary reveal" id="orderSummary">
+          <h3>Order Summary</h3>
+          <div id="summaryItems" class="summary-items"><p class="empty-summary">No items selected yet.</p></div>
+          <div class="summary-total" id="summaryTotal"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PAYMENT ===== -->
+  <section id="payment" class="payment section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Easy &amp; Secure</span>
+        <h2 class="section-title">Payment via M-Pesa 📲</h2>
+      </div>
+      <div class="payment-layout">
+        <div class="payment-instructions reveal">
+          <div class="till-card">
+            <p class="till-label">Buy Goods Till Number</p>
+            <p class="till-number">8404706</p>
+            <p class="till-name">Ojal Groceries</p>
+          </div>
+          <ol class="mpesa-steps">
+            <li><strong>Open M-Pesa</strong> on your Safaricom line.</li>
+            <li>Select <strong>Lipa na M-Pesa</strong>.</li>
+            <li>Select <strong>Buy Goods &amp; Services</strong>.</li>
+            <li>Enter Till Number <strong>8404706</strong>.</li>
+            <li>Enter the <strong>exact amount</strong> for your order.</li>
+            <li>Enter your <strong>M-Pesa PIN</strong> and confirm.</li>
+            <li>Save the <strong>M-Pesa confirmation code</strong>.</li>
+            <li>Fill in the confirmation form →</li>
+          </ol>
+        </div>
+        <div class="payment-confirm-form reveal">
+          <h3>Payment Confirmation</h3>
+          <form id="paymentForm" novalidate>
+            <div class="form-group">
+              <label for="payName">Your Name *</label>
+              <input type="text" id="payName" placeholder="Name used on M-Pesa" required />
+            </div>
+            <div class="form-group">
+              <label for="payCode">M-Pesa Code *</label>
+              <input type="text" id="payCode" placeholder="e.g. RGH7XXXXXX" required />
+            </div>
+            <div class="form-group">
+              <label for="payAmount">Amount Paid (KES) *</label>
+              <input type="number" id="payAmount" placeholder="e.g. 250" required />
+            </div>
+            <div class="form-group">
+              <label for="payPhone">Your Phone Number *</label>
+              <input type="tel" id="payPhone" placeholder="07XXXXXXXX" required />
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">✅ Confirm Payment via WhatsApp</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="contact section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Get in Touch</span>
+        <h2 class="section-title">Contact Us</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <span class="contact-icon">📞</span>
+          <h3>Call Us</h3>
+          <a href="tel:0769675130" class="contact-link">0769 675 130</a>
+        </div>
+        <div class="contact-card reveal">
+          <span class="contact-icon">💬</span>
+          <h3>WhatsApp</h3>
+          <a href="https://wa.me/254769675130" target="_blank" rel="noopener" class="contact-link">Chat with us</a>
+        </div>
+        <div class="contact-card reveal">
+          <span class="contact-icon">📍</span>
+          <h3>Location</h3>
+          <p>Embul Bul<br />Ngong, Kenya</p>
+        </div>
+        <div class="contact-card reveal">
+          <span class="contact-icon">🕐</span>
+          <h3>Business Hours</h3>
+          <p>Mon – Sat: 6 AM – 9 PM<br />Sunday: 7 AM – 8 PM</p>
+        </div>
+      </div>
+      <div class="contact-whatsapp-cta reveal">
+        <a href="https://wa.me/254769675130?text=Hi%20Ojal%20Groceries%2C%20I%27d%20like%20to%20place%20an%20order!" target="_blank" rel="noopener" class="btn btn-whatsapp">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp Us Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">🛒 Ojal Groceries</div>
+          <p>Your trusted neighbourhood grocery &amp; delicacy shop in Embul Bul, Ngong.</p>
+          <div class="footer-social">
+            <a href="https://wa.me/254769675130" target="_blank" rel="noopener" title="WhatsApp">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#offers">Special Offers</a></li>
+            <li><a href="#order">Order Now</a></li>
+            <li><a href="#payment">Payment</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="#products">Boiled Eggs</a></li>
+            <li><a href="#products">Smokies</a></li>
+            <li><a href="#products">Sausages</a></li>
+            <li><a href="#products">Omena</a></li>
+            <li><a href="#products">Fish</a></li>
+            <li><a href="#products">Grocery Items</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>📞 <a href="tel:0769675130">0769 675 130</a></p>
+          <p>💬 <a href="https://wa.me/254769675130" target="_blank" rel="noopener">WhatsApp</a></p>
+          <p>📍 Embul Bul, Ngong, Kenya</p>
+          <p>🏦 Till: <strong>8404706</strong></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="footerYear"></span> Ojal Groceries. All rights reserved.</p>
+        <p><a href="admin.html" class="admin-link">Admin</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== FLOATING WHATSAPP BUTTON ===== -->
+  <a href="https://wa.me/254769675130?text=Hi%20Ojal%20Groceries%2C%20I%27d%20like%20to%20place%20an%20order!" class="float-wa" target="_blank" rel="noopener" title="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
